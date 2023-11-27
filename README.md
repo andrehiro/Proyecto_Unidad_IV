@@ -1,16 +1,12 @@
 # Proyecto_Unidad_IV
 Andre Alexander Hidrogo Rocha 27/11/2023 Tercera parte del login por medio de Flask
 
-Pasos a seguir
-Sesiones y Flask
-Las sesiones son fundamentales para mantener la información del usuario entre distintas interacciones en un sitio web. En este caso, se usará Flask para gestionar estas sesiones.
-
-Instalación de flask_login
+### Instalación de flask_login
 Para iniciar, se debe instalar el paquete flask_login en el entorno virtual utilizando el siguiente comando:
 
-bash
-Copy code
+´´´ bash
 pip install FLASK_LOGIN
+´´´
 Implementación en el código
 Manejo de sesiones con Flask
 En el archivo app.py, se realiza la importación de las clases y funciones necesarias desde el paquete flask_login. Estas incluyen LoginManager, login_user, logout_user, y login_required.
