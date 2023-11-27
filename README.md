@@ -14,33 +14,43 @@ Andre Alexander Hidrogo Rocha 27/11/2023 Tienda en linea con una base de datos e
 
 ### Configuración del entorno virtual
 
-Crear un entorno virtual
+Crea un entorno virtual
 ``` bash
 py -m venv env
 ```
 
 Activar el entorno virtual
-
 ``` bash
 env\Scripts\activate
 ```
 
-
-Instalar Flask en el entorno virtual:
-
+Instala Flask, Flask-Login, Flask-MySQLdb y Flask-WTF en el entorno virtual
+``` bash
 pip install Flask
-Instalación de dependencias:
+pip install Flask-Login
+pip install Flask-MySQLdb
+pip install Flask-WTF
+```
 
-Instalar Flask y otras bibliotecas necesarias.
-Configurar el entorno para usar MySQL con Python (por ejemplo, instalar el conector MySQL).
-Configuración de la base de datos:
+### Configuración de la base de datos
 
-Crear una base de datos MySQL para la tienda en línea.
-Configurar las credenciales de la base de datos en el código o en un archivo de configuración separado.
-Descargar el código fuente:
+Crea una base de datos MySQL para la tienda en línea utilizando el script de la carpeta "base de datos".
+Configura las credenciales de la base de datos en el código o en un archivo de configuración separado.
 
-Clonar o descargar el repositorio de la aplicación desde el repositorio remoto.
-Ejecución de la aplicación:
+### Descargar el código fuente
 
-Ejecutar el servidor Flask.
+Clona o descarga el repositorio de la aplicación y coloca la carpeta "src" en la carpeta donde creaste tu entorno virtual.
+
+### Ejecución de la aplicación
+
+Asignar el archivo principal
+``` bash
+set FLASK_APP=app.py
+```
+
+Ejecutar el servidor Flask
+``` bash
+python .\src\app.py
+```
+
 Acceder a la aplicación desde un navegador web a través de la URL proporcionada por Flask.
