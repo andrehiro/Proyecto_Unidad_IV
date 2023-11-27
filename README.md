@@ -57,16 +57,22 @@ Acceder a la aplicación desde un navegador web a través de la URL proporcionad
 
 ## Instrucciones de uso
 
+En la tienda puedes interactuar con los productos y usuarios de la misma ademas de poder agregar productos al carrito, cabe resaltar que solo los administradores pueden entrar a la pestaña catalogo o usuarios.
+
 Para acceder a la pagina primero deberas crear una cuenta en MySQL con el procedimiento sp_AddUser.
 ``` sql
 call sp_AddUser("admin","123","juan perez",1);
 ```
 
-Una vez tienes una cuenta deberas ingresar los datos de la misma en el login
+Una vez tienes una cuenta deberas ingresar los datos de la misma en el login y ya podras entrar a la pagina.
+
 
 ![Texto alternativo](https://github.com/andrehiro/Proyecto_Unidad_IV/blob/main/imagenes%20para%20el%20README/login.png?raw=true)
 
-Una vez tienes una cuenta deberas ingresar los datos de la misma en el login
+### Catalogo
 
-<img src="https://github.com/andrehiro/Proyecto_Unidad_IV/blob/main/imagenes%20para%20el%20README/login.png?raw=true" alt="Texto alternativo" width="50%" height="auto">
+En el catalogo puedes ver los productos de la tienda modificarlos, eliminarlos y agregar nuevos.
+
+
+
 
