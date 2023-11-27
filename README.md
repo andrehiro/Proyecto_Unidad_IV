@@ -4,7 +4,7 @@ Andre Alexander Hidrogo Rocha 27/11/2023 Tercera parte del login por medio de Fl
 ### Instalación de flask_login
 Para iniciar, se debe instalar el paquete flask_login en el entorno virtual utilizando el siguiente comando:
 
-´´´ bash
+´´´ html
 pip install FLASK_LOGIN
 ´´´
 Implementación en el código
