@@ -21,7 +21,7 @@ py -m venv env
 
 Activar el entorno virtual
 
-``` hash
+``` bash
 env\Scripts\activate
 ```
 
