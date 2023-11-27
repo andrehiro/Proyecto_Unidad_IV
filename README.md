@@ -63,4 +63,10 @@ call sp_AddUser("admin","123","juan perez",1);
 ```
 
 Una vez tienes una cuenta deberas ingresar los datos de la misma en el login
+
 ![Texto alternativo](https://github.com/andrehiro/Proyecto_Unidad_IV/blob/main/imagenes%20para%20el%20README/login.png?raw=true)
+
+Una vez tienes una cuenta deberas ingresar los datos de la misma en el login
+
+<img src="https://github.com/andrehiro/Proyecto_Unidad_IV/blob/main/imagenes%20para%20el%20README/login.png?raw=true" alt="Texto alternativo" width="200" height="150">
+
