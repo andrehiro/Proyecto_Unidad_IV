@@ -14,7 +14,7 @@ Andre Alexander Hidrogo Rocha 27/11/2023 Tienda en linea con una base de datos e
 
 ### Configuración del entorno virtual
 
-**Crear un entorno virtual**
+Crear un entorno virtual
 ``` bash
 py -m venv env
 ```
