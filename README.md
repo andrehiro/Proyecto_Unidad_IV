@@ -34,7 +34,7 @@ pip install Flask-WTF
 
 ### Configuración de la base de datos
 
-Crea una base de datos MySQL para la tienda en línea utilizando el script de la carpeta "base de datos".
+Crea una base de datos MySQL para la tienda en línea utilizando el script de la carpeta "database".
 Configura las credenciales de la base de datos en el código o en un archivo de configuración separado.
 
 ### Descargar el código fuente
@@ -54,3 +54,13 @@ python .\src\app.py
 ```
 
 Acceder a la aplicación desde un navegador web a través de la URL proporcionada por Flask.
+
+## Instrucciones de uso
+
+Para acceder a la pagina primero deberas crear una cuenta en MySQL con el procedimiento sp_AddUser.
+``` sql
+call sp_AddUser("admin","123","juan perez",1);
+```
+
+Una vez tienes una cuenta deberas ingresar los datos de la misma en el login
+
