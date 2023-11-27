@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="inicio">
+            <img src="{{ url_for('static', filename='img/Logo_PlushRush.png') }}" width="50" height="50"
+                alt="Logo de la empresa">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="inicio">Inicio</a>
+                </li>
+                {% if session.get('admin') %}
+                <li class="nav-item" id="menuCatalogo">
+                    <a class="nav-link" href="catalogo">Catálogo</a>
+                </li>
+                <li class="nav-item" id="menuUsuarios">
+                    <a class="nav-link" href="usuarios">Usuarios</a>
+                </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="tienda">Tienda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="acercaDe">Acerca de</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <h1 class="text-center" id="tituloUsuario">Lista de usuarios</h1>
+    <table border="1" id="tablaUsuarios">
+        <tr>
+            <th class="tablaTitulo">ID</th>
+            <th class="tablaTitulo">Username</th>
+            <th class="tablaTitulo">Nombre Completo</th>
+            <th class="tablaTitulo">Tipo de Usuario</th>
+        </tr>
+        {% for usuario in usuarios %}
+        <tr>
+            <td class="tablaTexto">{{ usuario[0] }}</td>
+            <td class="tablaTexto">{{ usuario[1] }}</td>
+            <td class="tablaTexto">{{ usuario[3] }}</td>
+            <td class="tablaTexto">{{ usuario[4] }}</td>
+            <td class="tablaSinBordes" class="tablaTexto">
+                <form action="/modificar_usuario" method="post">
+                    <input type="hidden" name="user_id" value="{{ usuario[0] }}">
+                    <div class="input-fields" style="display: none;">
+                        <input type="text" class="card-input" name="new_username" placeholder="Nuevo nombre de usuario" value="{{ usuario[1] }}">
+                        <input type="password" class="card-input" name="new_password" placeholder="Nueva contraseña">
+                        <input type="text" class="card-input" name="new_fullname" placeholder="Nuevo nombre completo" value="{{ usuario[3] }}">
+                        <input type="number" class="card-input" name="new_usertype" placeholder="Nuevo tipo de usuario" value="{{ usuario[4] }}" required>
+                    </div>
+                    <button type="button" class="btn btn-custom botonModificar" onclick="toggleInputs(this)">Modificar</button>
+                    <button type="submit" class="btn btn-custom botonGuardar" style="display: none;">Guardar</button>
+                </form>
+            </td>
+            <td class="tablaSinBordes" class="tablaTexto">
+                <form action="/eliminar_usuario" method="post">
+                    <input type="hidden" name="user_id" value="{{ usuario[0] }}">
+                    <button type="submit" class="btn btn-primary"  id="botonEliminar">Eliminar</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <form action="/agregar_usuario" method="post">
+        <input type="text" class="card-input" name="username" placeholder="Nombre de usuario" required>
+        <input type="password" class="card-input" name="password" placeholder="Contraseña" required>
+        <input type="text" class="card-input" name="fullname" placeholder="Nombre completo">
+        <input type="number" class="card-input" name="usertype" placeholder="Tipo de usuario" required>
+        <div class="col d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary" id="botonAgregarUsuario">Agregar Usuario</button>
+        </div>
+    </form>
+    <footer>Andre Hidrogo 2023</footer>
+    <script>
+    function toggleInputs(button) {
+    const form = button.closest('form');
+    const inputFields = form.querySelector('.input-fields');
+    const modificarBtn = form.querySelector('.botonModificar');
+    const guardarBtn = form.querySelector('.botonGuardar');
+
+    if (inputFields.style.display === 'none' || inputFields.style.display === '') {
+        inputFields.style.display = 'block';
+        modificarBtn.style.display = 'none';
+        guardarBtn.style.display = 'block';
+    } else {
+        inputFields.style.display = 'none';
+        modificarBtn.style.display = 'block';
+        guardarBtn.style.display = 'none';
+    }
+}
+
+
+        function mostrarFormulario(userId) {
+            var formId = "formModificar_" + userId;
+            var form = document.getElementById(formId);
+            if (form.style.display === "none") {
+                form.style.display = "block";
+            } else {
+                form.style.display = "none";
+            }
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
