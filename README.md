@@ -12,15 +12,19 @@ Andre Alexander Hidrogo Rocha 27/11/2023 Tienda en linea con una base de datos e
 
 ## Instrucciones de instalación
 
-#### Configuración del entorno virtual
+### Configuración del entorno virtual
 
-###### Crear un entorno virtual
-
+**Crear un entorno virtual**
+``` bash
 py -m venv env
+```
 
-Activar el entorno virtual:
+Activar el entorno virtual
 
+``` hash
 env\Scripts\activate
+```
+
 
 Instalar Flask en el entorno virtual:
 
