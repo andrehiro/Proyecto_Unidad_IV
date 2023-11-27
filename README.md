@@ -63,7 +63,7 @@ Para mostrar los datos del usuario en home.html y admin.html:
 
 Para el logout, se crea la ruta /logout y se utiliza el método logout_user(). También se agrega un enlace en las plantillas admin.html y home.html para realizar el logout.
 
-``` html
+``` python
 @app.route("/logout")
 @login_required
 def logout():
