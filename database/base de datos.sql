@@ -1,6 +1,6 @@
 use tienda;
 SELECT * FROM users;
-delete from users where id = 8;
+
 CREATE TABLE users (
  id smallint unsigned NOT NULL ,
  username varchar(20) NOT NULL,
